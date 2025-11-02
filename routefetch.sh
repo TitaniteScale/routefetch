@@ -14,7 +14,6 @@ COMMON=(
   "lotad"
   "chikorita"
   "paras"
-  "shooky"
   "bonsly"
 )
 
