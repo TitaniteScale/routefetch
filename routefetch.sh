@@ -31,7 +31,6 @@ RARE=(
   "snorlax"
   "venusaur"
   "torterra"
-  "meowscarada"
   "decidueye"
 )
 
