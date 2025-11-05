@@ -16,13 +16,13 @@ If you want to use this for fastfetch, navigate to your fastfetch config.
 cd ~/.config/fastfetch
 ```
 
-Once in your fastfetch folder, clone this repo into a scripts folder.
+Clone this repo into your fastfetch config folder.
 
 ```bash
 git clone git@github.com:TitaniteScale/routefetch.git scripts
 ```
 
-Then, in your fastfetch config, change the type and source of the logo to the following:
+Then, in your fastfetch config file (fastfetch/config.jsonc), modify the type and source of the logo section such that it takes the execution of the shell script as a command:
 
 ```json
   "logo": {
