@@ -27,7 +27,7 @@ Then, in your fastfetch config file (fastfetch/config.jsonc), modify the type an
 ```json
   "logo": {
     "type": "command-raw",
-    "source": "~/.config/fastfetch/scripts/routefetch.sh",
+    "source": "~/.config/fastfetch/routefetch/routefetch.sh",
 ```
 
 ## Example
