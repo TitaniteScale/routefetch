@@ -44,5 +44,50 @@ Routefetch randomly selects Pokémon from four different rarity tiers:
 Additionally, every Pokémon has a 1% chance of appearing in its shiny form.
 Changing the rates is very easy as the shell script is very simple.
 
+## DMG Mode
+
+Sprites can be re-rendered with a four-shade Game Boy palette. Set `DMG_MODE`
+near the top of `routefetch.sh`:
+
+```bash
+DMG_MODE="${ROUTEFETCH_DMG:-green}"
+```
+
+| Value | Result |
+| --- | --- |
+| `off` | Full colour sprites (default) |
+| `green` | Original Game Boy (DMG) LCD green |
+| `gray` | Four-level grayscale |
+
+You can also flip it per-run without editing anything:
+
+```bash
+ROUTEFETCH_DMG=green ./routefetch.sh
+```
+
+The palette logic lives in `dmg.sh`, which is a plain stdin/stdout filter, so
+it works with any truecolor sprite and can be used on its own:
+
+```bash
+pokeget pikachu --hide-name | ./dmg.sh
+pokeget pikachu --hide-name | ./dmg.sh --palette gray
+pokeget pikachu --hide-name | ./dmg.sh --colors '#0F380F,#306230,#8BAC0F,#9BBC0F'
+```
+
+Each colour in the sprite is ranked by luminance and reduced to four levels of
+grey, and those levels then choose the shade to draw with. The luminance range
+is stretched per sprite, so dark Pokémon still use the whole palette instead of
+flattening into one shade. Transparent pixels stay transparent.
+
+### Upcoming
+
+- **`--fill`** — real DMG hardware has no transparency, so the area around the
+  sprite would be lightest green rather than showing through to the terminal,
+  making it look like an actual Game Boy screen. This needs pokeget's rows
+  padded to a uniform width first, since it trims them and they currently vary
+  by a few cells.
+- **More palettes** — Game Boy Pocket and Game Boy Light shades, on top of the
+  existing `--colors` escape hatch.
+
 
 Enjoy!
