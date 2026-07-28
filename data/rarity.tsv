@@ -1,0 +1,51 @@
+# routefetch rarity table
+#
+# One entry per line: tier:weight:pokeget-args
+#
+#   tier          one of: common, uncommon, rare, ultra_rare
+#   weight        positive integer, relative weight *within this tier only*.
+#                 All entries below use 1, i.e. every Pokemon in a tier is
+#                 equally likely - raise an entry's weight to favour it over
+#                 its tier-mates without touching the others.
+#   pokeget-args  passed straight through to pokeget, unquoted/word-split -
+#                 an entry may carry extra flags, e.g. "rotom --form wash".
+#                 Because of the word split, no name or flag value here can
+#                 contain a literal space *within* one argument.
+#
+# The odds *between* tiers (common/uncommon/rare/ultra_rare) are set by
+# TIER_WEIGHT_* in config/routefetch.conf, not here.
+#
+# Blank lines and lines starting with # are ignored.
+
+# --- common ---
+common:1:porygon
+common:1:voltorb
+common:1:klink
+common:1:elekid
+common:1:shinx
+common:1:scraggy
+common:1:magnemite
+common:1:pichu
+
+# --- uncommon ---
+uncommon:1:toxtricity
+uncommon:1:electabuzz
+uncommon:1:raichu
+uncommon:1:eelektross
+uncommon:1:magneton
+uncommon:1:jolteon
+
+# --- rare ---
+rare:1:rotom
+rare:1:rotom --form wash
+rare:1:rotom --form frost
+rare:1:luxray
+rare:1:electivire
+rare:1:porygon-z
+
+# --- ultra_rare ---
+ultra_rare:1:zygarde --form complete
+ultra_rare:1:genesect
+ultra_rare:1:zeraora
+ultra_rare:1:zapdos
+ultra_rare:1:articuno --galar

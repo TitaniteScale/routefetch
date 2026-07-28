@@ -1,0 +1,39 @@
+# routefetch default configuration
+#
+# These are the shipped defaults. To customize, copy this file to
+# routefetch.conf (same directory) and edit that instead - routefetch.conf
+# is not tracked by git and always takes priority over this file.
+#
+# You can also point at a config file anywhere else with:
+#   ROUTEFETCH_CONFIG=/path/to/file ./routefetch.sh
+#
+# ROUTEFETCH_DMG, if set, overrides DMG_MODE below regardless of which
+# config file is in use. See the README's Configuration section for the
+# full precedence order.
+
+# DMG palette mode: off | green | gray
+# (on/yes/true -> green and no/false -> off are also accepted, for
+# backward compatibility with old ROUTEFETCH_DMG values)
+DMG_MODE="off"
+
+# Reserved for the planned --fill feature (opaque DMG background instead of
+# transparent). Not implemented yet - routefetch ignores this until --fill
+# ships. See the README Roadmap.
+DMG_FILL="off"
+
+# Reserved: comma-separated 4-colour override, same syntax as
+# lib/dmg.sh --colors. Leave empty to use the built-in palette named by
+# DMG_MODE.
+DMG_COLORS=""
+
+# Relative weights between rarity tiers (positive integers). They are
+# normalized automatically and do not need to sum to 100 - e.g. doubling
+# every value here changes nothing.
+TIER_WEIGHT_COMMON=60
+TIER_WEIGHT_UNCOMMON=30
+TIER_WEIGHT_RARE=9
+TIER_WEIGHT_ULTRA_RARE=1
+
+# Odds of a shiny, as 1-in-N (positive integer). 100 means a 1% chance.
+# Applies after a Pokémon has already been picked, regardless of tier.
+SHINY_ODDS=100
