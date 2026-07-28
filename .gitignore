@@ -6,6 +6,10 @@ config/routefetch.conf
 # Alternate config file location, if ROUTEFETCH_CONFIG is pointed here
 *.local.conf
 
+# Local PokeAPI cries clone (~55MB audio), if fetched while prototyping the
+# Cries roadmap item - see the Roadmap section. Not vendored either way.
+data/cries/
+
 # OS cruft
 .DS_Store
 .DS_Store?
