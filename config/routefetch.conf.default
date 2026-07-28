@@ -16,11 +16,6 @@
 # backward compatibility with old ROUTEFETCH_DMG values)
 DMG_MODE="off"
 
-# Reserved for the planned --fill feature (opaque DMG background instead of
-# transparent). Not implemented yet - routefetch ignores this until --fill
-# ships. See the README Roadmap.
-DMG_FILL="off"
-
 # Reserved: comma-separated 4-colour override, same syntax as
 # lib/dmg.sh --colors. Leave empty to use the built-in palette named by
 # DMG_MODE.

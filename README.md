@@ -63,7 +63,6 @@ You can also point at a config file anywhere else with
 | Key | Meaning |
 | --- | --- |
 | `DMG_MODE` | `off` / `green` / `gray` — see DMG Mode below |
-| `DMG_FILL` | reserved, not implemented yet — see Roadmap |
 | `DMG_COLORS` | reserved, not implemented yet — see Roadmap |
 | `TIER_WEIGHT_COMMON` | relative weight of the common tier |
 | `TIER_WEIGHT_UNCOMMON` | relative weight of the uncommon tier |
@@ -141,11 +140,6 @@ flattening into one shade. Transparent pixels stay transparent.
 
 ## Roadmap
 
-- **`--fill`** — real DMG hardware has no transparency, so the area around the
-  sprite would be lightest green rather than showing through to the terminal,
-  making it look like an actual Game Boy screen. This needs pokeget's rows
-  padded to a uniform width first, since it trims them and they currently vary
-  by a few cells.
 - **More palettes** — Game Boy Pocket and Game Boy Light shades, on top of the
   existing `--colors` escape hatch.
 - **Cries** — playing each Pokémon's cry through `paplay`/`aplay`/`afplay`
