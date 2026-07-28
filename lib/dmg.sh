@@ -8,9 +8,9 @@
 # the shade to draw with. Transparent pixels stay transparent.
 #
 # Usage:
-#   pokeget pichu --hide-name | ./dmg.sh
-#   pokeget pichu --hide-name | ./dmg.sh --palette gray
-#   pokeget pichu --hide-name | ./dmg.sh --colors '#0F380F,#306230,#8BAC0F,#9BBC0F'
+#   pokeget pichu --hide-name | lib/dmg.sh
+#   pokeget pichu --hide-name | lib/dmg.sh --palette gray
+#   pokeget pichu --hide-name | lib/dmg.sh --colors '#0F380F,#306230,#8BAC0F,#9BBC0F'
 #
 # Palettes are always listed darkest -> lightest.
 
