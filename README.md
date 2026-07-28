@@ -142,8 +142,15 @@ flattening into one shade. Transparent pixels stay transparent.
 
 - **More palettes** — Game Boy Pocket and Game Boy Light shades, on top of the
   existing `--colors` escape hatch.
-- **Cries** — playing each Pokémon's cry through `paplay`/`aplay`/`afplay`
-  (whichever is available) when its sprite is shown. Not implemented yet.
+- **Cries** — playing each Pokémon's cry when its sprite is shown, via an
+  auto-detected player (`paplay`/`mpv`/`ffplay`/`mpg123`, whichever is
+  found). Prototyped and then shelved: the real blocker isn't audio
+  playback itself, it's that `routefetch.sh` has no way to tell "a genuinely
+  new terminal session" apart from any other reason fastfetch might get
+  re-invoked (e.g. a window resize/reflow), so cries risk firing far more
+  often than intended. Needs that invocation-detection question solved
+  first, probably with better tooling than a plain bash script check, before
+  this is worth turning back on.
 - **Bounce animation** — making the sprite bounce in place the way it would
   in-game, via an ANSI cursor-movement loop. Not implemented yet.
 
